@@ -21,7 +21,8 @@ A systematical approach to the verification is important to prevent issues as th
 \paragraph{Integration tool}\mbox{}\\
 \noindent The integration procedures for 1 and 2 dimensional cases are tested against analytically calculated integrals of simpler univariate or multivariate functions.
 
-
+\paragraph{Bending and shear stress distributions}\mbox{}\\
+\noindent The bending and shear stress distributions produced by the numerical model will be assessed by applying a sanity check. This will check for the feasibility and reasonability of the numbers with respect to their physical meaning, and for the correct use of signs.
 
 \subsection{Integration testing}
 After each of the main functions have been tested using unit tests, it is time to verify to what extent do these units work together within the code, as some possible bugs may not be identified at the unit level itself.
@@ -41,11 +42,10 @@ System testing represents the verification procedure of the program as a whole. 
 
 
 \paragraph{Comparison with the given verification model}\mbox{}\\
-\noindent The final system test that will be performed will consist of comparing the outputs of the designed numerical model with those delivered by the verification model. This will be done by changing the input variables in the verification model to those corresponding to the Fokker 100. Due to the fact that many different assumptions have been made both in the team's numerical model and in the given verification model, as different methods have been used, a perfect match of the output data of the two programs is not required. However, a very close result with minor to no differences should be observed with regards to the result of the verification model, in order to be able to state that the numerical model is indeed correct. 
+\noindent The final system test that will be performed will consist of comparing the outputs of the designed numerical model with those delivered by the verification model. This will be done by changing the input variables in the verification model to those corresponding to the Fokker 100. Due to the fact that many different assumptions have been made both in the team's numerical model and in the given verification model, as different methods have been used, a perfect match of the output data of the two programs is not required. However, a very close result with acceptable, minor differences should be observed with regards to the result of the verification model, in order to be able to state that the numerical model is indeed correct. 
 
 
 \paragraph{Accuracy of testing}\mbox{}\\
-\noindent It is expected that the results of the unit tests won't match up exactly with the hand-calculated, because of rounding errors and the inexact representation of real numbers on a computer. Thus the unit tests will succeed if the difference between the results is less than 0.1\%. This limit is considered sufficiently small to ensure accurate enough calculations in later stages of the analysis. Furthermore, the interpolation and and integration procedures are tested for their order of accuracy. For this they will be run for different grid spacings, and the rate of decrease of error is observed. These tests will succeed if the order of accuracy matches the expected order of accuracy of the used method. In order to ensure these tests will yield the actual order of accuracy of the used scheme, the functions $f$ used in testing are chosen such that $f \in C^{\infty}$. 
+\noindent It is expected that the results of the unit tests won't match up exactly with the hand-calculated results, because of rounding errors and the inexact representation of real numbers on a computer. Thus the unit tests will succeed if the difference between the results is less than 0.1\%. This limit is considered sufficiently small to ensure accurate enough calculations in later stages of the analysis. Furthermore, the interpolation and and integration procedures are tested for their order of accuracy. For this they will be run for different grid spacings, and the rate of decrease of error is observed. These tests will succeed if the order of accuracy matches the expected order of accuracy of the used method. In order to ensure these tests will yield the actual order of accuracy of the used scheme, the functions $f$ used in testing are chosen such that $f \in C^{\infty}$. 
 
-\subsection{Comparison}
-After making sure the program works as required, the results can be compared to the results of the verification model, assuming the model does not contain faults. By again checking results during the program, discrepancies can be identified. Logically, if the first output is relatively close to the expected output from the verification model, and the second output is not, something is wrong in the numerical model. This way the verification model can be used as a very close approximation of what the numerical model should be.
+

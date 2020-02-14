@@ -9,7 +9,7 @@ The numerical model that will be developed by the team in the following weeks sh
 \subsection{Assumptions}
 In the verification model, multiple assumptions are made. To prevent the need to repeat, all the assumptions used throughout the verification model are stated below with their explanations.\\
 \begin{itemize}
-    \item The aileron consist of only thin walled components.\\\\
+    \item The aileron consists of only thin walled components.\\\\
     This is a valid assumption because the thickness of the skin and stiffeners are one order of magnitude smaller than the total structure. This assumption makes it easier to calculate the sheer flow in a cross section because it is not dependent on the thickness. Even though the thickness is not constant and shear flow peaks could occur, the assumption is still applicable because the contribution would be too small.\\
     \item The stringers are assumed to be point areas located on the skin.\\ \\
     This assumption makes the computation of the centroid easier and is applicable because the centroids of these stringers are not contributing largely to the the centroid of the whole structure. It also ensures the stringers do not have a moment of inertia around their own axis because this moment of inertia is neglectable with regards to the Steiner terms.\\
@@ -27,7 +27,7 @@ To compute the centroid, using previously mentioned assumptions, it is necessary
     \bar{x}=\frac{\int \tilde{x} d A}{\int d A} ;  \bar{y}=\frac{\int \tilde{y} d A}{\int_{A} d A}
 \end{equation}
 
-\noindent When the centroid is obtained. The second moment of area can be computed using the Steiner terms of the stringers, skins and spar, and the moments of inertia of the skins and spar. Combining these using formulae from literature, the total moment of inertia of the structure can be found.
+\noindent When the centroid is obtained, the second moment of area can be computed using the Steiner terms of the stringers, skins and spar, and the moments of inertia of the skins and spar. Combining these using formulae from literature, the total moment of inertia of the structure can be found.
 
 \subsection{Torsional stiffness calculations}\label{subsec:torsstiffcalc}
 
@@ -205,8 +205,9 @@ Furthermore, the direct stress due to the moment $M_y$ and $M_z$ can be calculat
 \end{equation}
 
 \subsection{Program description}
-The program consists of 5 parts, which will each be discussed. 
-In part 1, the parameters are defined. These are the parameters that can be changed to perform verification with our model. \\
+The program consists of 5 parts, which will each be discussed. \\
+
+\noindent In part 1, the parameters are defined. These are the parameters that can be changed to perform verification with our model. \\
 
 \noindent In part 2, the bending properties are established. This is done through defining a cross-section object, which is then used to calculate its bending properties. For this, several parameters can be reviewed, such as the location of the centroid, cross sectional area and stringer coordinates, and the moment of inertia about the y-axis and z-axis.\\
 

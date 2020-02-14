@@ -5,15 +5,13 @@ Firstly the assumptions and idealisations are listed along with their arguments 
 
 \subsection{Assumptions and idealisations}
 \label{subsec:assumptions_numerical}
-The structure is idealised as a boom skin multi-cell beam structure. This assumption is reasonable, as the thickness of the skin is magnitudes smaller than the size of the structure, as well as the moment of inertia of a stringer is magnitudes smaller than its contribution to the bending stiffness by the parallel axis theorem. With this idealisation it is assumed that only the stiffeners carry normal stresses, while the skin only carries shear. Furthermore it is assumed that the material is behaving linearly in all load cases, this is a reasonable assumption if the maximum stress in the aileron stays below the yield stress of the material used.\\
+The structure is idealised as a boom skin multi-cell beam structure. This assumption is reasonable, as the thickness of the skin is magnitudes smaller than the size of the structure, as well as the Moment of Inertia of a stringer is magnitudes smaller than its contribution to the bending stiffness by the parallel axis theorem. With this idealisation it is assumed that only the stiffeners carry normal stresses, while the skin only carries shear. Furthermore it is assumed that the material is behaving linearly in all load cases, this is a reasonable assumption if the maximum stress in the aileron stays below the yield stress of the material used.\\
 
-\noindent As the structure is assumed to be thin walled with stringers in the direction of the x axis, compressive and tensile forces are only taken into account for this direction, as there are however no external Forces acting in the x axis, the structure is assumed to be only in shear, bending, and torsion. These 3 can occur around all axes. However, bending around the y axis is neglected, as all 3 hinges are fixed in this direction and the moment of inertia for this bending is bigger than for the other directions while the forces causing it are smaller. Bending around the x axis is also neglected as the chord of the aileron is much shorter than the width of width of the aileron. Torsion is only considered around the x axis of the aileron as this direction has the smallest cross-section of the 3 possible cutting planes. Furthermore shear in the x direction is not calculated, as it can be seen by inspection that no external forces are acting in the x axis.
-
-\noindent Furthermore, the weight of the aileron is neglected in all calculations. It is also assumed that the deformation of the aileron has no effect on the deformation of the wing.
+\noindent As the structure is assumed to be thin walled with stringers in the direction of the x axis, compressive and tensile forces are only taken into account for this direction, as there are however no external forces acting in the x axis, the structure is assumed to be only in shear, bending, and torsion. These 3 can occur around all axes. However, bending around the y axis is neglected, as all 3 hinges are fixed in this direction and the moment of inertia for this bending is bigger than for the other directions while the forces causing it are smaller. Bending around the x axis is also neglected as the chord of the aileron is much shorter than the width of the aileron. Torsion is only considered around the x axis of the aileron as this direction has the smallest cross-section of the 3 possible cutting planes. Furthermore, shear in the x direction is not calculated, as it can be seen by inspection that no external forces are acting in the x axis. In addition, the weight of the aileron is neglected in all calculations. It is also assumed that the deformation of the aileron has no effect on the deformation of the wing.
 
 \subsection{Load case decomposition}
 \label{subsec:load_decomposition}
-In the concerning loading scenario, two loads are present along with the bending of the aileron. These together cause reaction forces and cause deflection and twist of the structure and stresses in the structure. Instead of analysing the effects of the bending and the two loads simultaneously, the effects of multiple load cases are analysed separately. Afterwards these are added up to come to the total load decomposition. Three load cases are used in the model.
+In the concerning loading scenario, two loads are present along with the bending of the aileron. These together cause reaction forces which cause deflection, twist of the structure and stresses in the structure. Instead of analysing the effects of the bending and the two loads simultaneously, the effects of multiple load cases are analysed separately. Afterwards these are added up to get to the total load decomposition. Three load cases are used in the model.
 
 \subsubsection{First load case}
 \noindent Firstly there is the deformation of the aileron, due to the wing-flex of the main wing. This deformation is described as bending around the z-axis. Naturally this causes a bending moment around the z-axis. Furthermore this causes reaction forces to appear in hinge 1 and 3 in the y-direction.\\
@@ -31,7 +29,7 @@ In the concerning loading scenario, two loads are present along with the bending
 \noindent For all these load cases the reaction forces can be calculated by setting a force and moment equilibrium.
 
 \subsubsection{Decomposition}
-\noindent When all the of loads acting on the aileron are known, torsion (shear stress), normal (bending) stress and shear stress are calculated for each load case if they apply. Finally, using the principle of superposition, torsion, normal stress and shear stress are calculated as a result of all load cases and unified into a single load case. From this load case the maximum angle of twist, maximum deflections of the aileron at the leading- and trailing edge and the maximum stresses can be found.
+\noindent When all of the loads acting on the aileron are known, normal (bending) stress and shear stress are calculated for each load case if they apply. Finally, using the principle of superposition, normal stress and shear stress are calculated as a result of all load cases and unified into a single load case. From this load case the maximum angle of twist, maximum deflections of the aileron at the leading- and trailing edge and the maximum stresses can be found.
 
 
 \subsubsection{Governing equations}
@@ -46,7 +44,7 @@ The second equation deals with the rate of twist experienced by the entire struc
     \frac{d \theta}{d x}=\frac{1}{2 A_{r}} \oint \frac{q d s}{G t}
 \end{equation}
 Consequently, this system of equations is used to calculate the resulting shear flow in the entire aileron structure from the applied torques. Knowing these shear flow values, the rate of twist can be calculated.\par
-\noindent In order to analyse the bending of the aileron, it is assumed to behave as an ideal engineering beam ,which deflection can be described by \eqautoref{eq:Beamformula} \cite{the_book}.
+\noindent In order to analyse the bending of the aileron, it is assumed to behave as an ideal engineering beam, which deflection can be described by \eqautoref{eq:Beamformula} \cite{the_book}.
 
 \begin{equation}
     \frac{d^2}{d x^2}w(x) = \frac{M_x}{E I_{zz}}
@@ -78,7 +76,7 @@ Furthermore, the shear in the cross section of the structure can be described by
     q=\tau t
 \end{equation}
 \subsection{Method}
-As described in the previous section our model is divided in different load cases which are put together in one after all the calculations. The model itself is set up in seperate modules. 
+As described in the previous section our model is divided in different load cases which are combined after all the calculations. The model itself is set up in separate modules. 
 These will be explained in the next paragraphs. Everything is also made visible with a flow chart to make it clearer to understand the working principle of the simulation.
 
 \subsubsection{Centroid}
@@ -94,7 +92,7 @@ This idealisation is used to calculate the moment of Inertia and also when calcu
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm,angle=90]{Images/boom.pdf}
+    \includegraphics[width=6cm,angle=90]{Images/boom.pdf}
     \caption{Structural boom idealisation of the aileron structure}
     \label{fig:boom}
 \end{figure}
@@ -126,9 +124,9 @@ Normal stresses are solely caused by the bending moment. As stated in \autoref{s
 The normal stresses in each boom are determined from the bending moments caused by all three load cases. Then these are added up and this results in the total normal stress distribution in the structure.
 
 \subsection{Flow chart}
-The method of the simulation is also made visible with a flow chart (\autoref{flowchart}), in which the same chronological order (of the method) can be found. By following the numbers in the beginning of every square, it is clear that from the geometric properties first some necessary values are calculated (centroid, idealisation, moment of inertia). Afterwards the three load cases are analysed separately. Starting with the stresses induced by the wing deformation. Because this loading was not given it needs to be obtained in the opposite direction. From displacement to moment to stresses. To do this a linear system of equations and some boundary conditions were used.\\
+The method of the simulation is also made visible with a flow chart (\autoref{flowchart}), in which the same chronological order (of the method) can be found. By following the numbers in the beginning of every square, it is clear that from the geometric properties first some necessary values are calculated (centroid, idealisation, moment of inertia). Afterwards the three load cases are analysed separately. Starting with the stresses induced by the wing deformation. Because this loading was not given it needs to be obtained in the opposite direction. From displacement to moment to stresses. To do this a linear system of equations and some boundary conditions are used.\\
 
-\noindent For the two other load cases some extra inputs were needed, namely the loading itself. Despite the fact that these loads are solved in two different cases, there way of solving is the same. Namely analysing the load, solve for the reaction forces and the different internal loads and getting the stresses out of this internal loads.\\
+\noindent For the two other load cases some extra inputs are needed, namely the loading itself. Despite the fact that these loads are solved in two different cases, their way of solving is the same. Namely analysing the load, solve for the reaction forces and the different internal loads and extracting the stresses from these internal loads.\\
 
 \noindent All these elements are then combined together to get the ultimate load case from which the maximum stresses, angle of twist and deformations can be obtained.
 
