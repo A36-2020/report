@@ -1,0 +1,91 @@
+\section{Description of loading cases}
+\label{sec:loading}
+%We need a little more explanations here, I think. Let's try to expand it a bit
+
+\textit{The first step to analysing any structural analysis problem is defining the load case. It is essential to do this accurately, in order to ensure realistic results.
+}
+
+\subsection{Loading scenario}
+The concerned loading case of the aileron is caused by the critical loading scenario of the Fokker 100. This scenario is a combination of a couple elements: The aileron is deflected to it's maximum potential upward deflection which is 30 degrees. Also, the aerodynamic loading of the wing is at the limit load. Lastly, one of the actuators used to control the aileron is jammed while the second actuator is giving a discrete load in the negative z-direction.
+
+\subsection{Reference frame}
+The reference frame used for this model has its x-axis in span wise direction, pointing towards the tip of the undeformed main wing. The z-axis is in chord wise direction, pointing towards the leading edge. Finally, the y-axis is directed upwards, orthogonal to the aileron surface. This reference frame is visualised in \figautoref{fig:reference_frame}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm,angle=90]{Images/reference_frame.pdf}
+    \caption{Reference frame}
+    \label{fig:reference_frame}
+\end{figure}
+
+
+\subsection{Geometry and Specifications}
+The geometry of the aileron is visualized in \figautoref{fig:Dimensions_top_view}, \figautoref{fig:Dimensions_side_view} and \figautoref{fig:Dimensions_back_view}. The important dimensions are labeled with parameters. These parameters are further defined for our Fokker 100 airplane in \figautoref{fig:Parameters_aileron_F100}.
+
+
+
+\begin{figure}[H]
+\begin{minipage}[b]{0.45\linewidth}
+\centering
+\includegraphics[width=8cm]{Images/Dimension_top_view.jpg}
+\caption{Geometry and dimensions: Top view \cite{Assignment_description}.}
+\label{fig:Dimensions_top_view}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[b]{0.45\linewidth}
+\centering
+\includegraphics[width=8cm]{Images/Dimension_side_view.jpg}
+\caption{Geometry and dimensions: Side view \cite{Assignment_description}. }
+\label{fig:Dimensions_side_view}
+\end{minipage}
+\begin{minipage}[b]{\linewidth}
+\centering
+\includegraphics[width=8cm]{Images/Dimension_back_view.jpg}
+\caption{Geometry of the deformed and undeformed aileron : Back view \cite{Assignment_description}.}
+\label{fig:Dimensions_back_view}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{Dimensions_table.jpg}
+    \caption{Parameters of aileron of the a Fokker 100 \cite{aircraft_data}}
+    \label{fig:Parameters_aileron_F100}
+\end{figure}
+
+
+
+
+
+\subsection{Loading case and free body diagrams}
+The locations of the three hinges and the two actuators can be seen in \figautoref{fig:Dimensions_top_view}.
+The aileron is attached to the wing via three hinges, numerically ordered from right to left in \figautoref{fig:Dimensions_top_view}. The second (middle) hinge is fixed in x-,y- and z-direction.
+The first (right) and second (left) hinge are fixed only in y-direction.
+The actuator that is numbered I in \figautoref{fig:Dimensions_top_view} is fixed in z-direction.
+At each hinge there are three reaction forces in x-,y- and z-direction.
+\par
+A point load P acts at actuator II in negative y- and z-direction. Its direction is equal to a negative rotation around the x-axis that is equal to the maximum upward deflection angle. 
+A distributed load q is present due to aerodynamic forces. Its direction is in negative y-direction, perpendicular to the symmetry plane of the aileron (x-,z-plane). The magnitude of the distributed load varies over the aileron surface in both x- and z-direction. 
+These loads acting on the aileron in the relevant loading case can now be visualised. This is done in the free body diagrams for the top view, side view and back view. These can be seen in \figautoref{fig:FBD_top_view}, \figautoref{fig:FBD_side_view} and \figautoref{fig:FBD_back_view}.
+\par
+\begin{figure}[H]
+\begin{minipage}[b]{0.45\linewidth}
+\centering
+\includegraphics[width=8cm]{Images/FBD_top_view.JPG}
+\caption{Free body diagram: Top view}
+\label{fig:FBD_top_view}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[b]{0.45\linewidth}
+\centering
+\includegraphics[width=8cm]{Images/FBD_side_view.JPG}
+\caption{Free body diagram: Side view}
+\label{fig:FBD_side_view}
+\end{minipage}
+\begin{minipage}[b]{\linewidth}
+\centering
+\includegraphics[width=8cm]{Images/FBD_back_view.JPG}
+\caption{Free body diagram: Back view}
+\label{fig:FBD_back_view}
+\end{minipage}
+\end{figure}
