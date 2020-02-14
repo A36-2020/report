@@ -19,7 +19,7 @@ In the verification model, multiple assumptions are made. To prevent the need to
     \item The spacing of the stringers is assumed to be constant along the skin of the aileron
     
 \end{itemize}
-\subsection{Bending Stiffness Calculations}
+\subsection{Bending stiffness calculations}
 In order to be able to calculate bending stresses and stiffness, the respective properties need to be computed. These properties are the centroid and second moment of area of the aileron. \\ \\
 To compute the centroid, using previously mentioned assumptions, it is necessary to know the stringer spacing. This can be done by dividing the length of the skin by the number of stringer. Then, by knowing the locations, the centroid can be calculated using \eqautoref{centroid}.
 \begin{equation}
@@ -27,9 +27,9 @@ To compute the centroid, using previously mentioned assumptions, it is necessary
     \bar{x}=\frac{\int \tilde{x} d A}{\int d A} ;  \bar{y}=\frac{\int \tilde{y} d A}{\int_{A} d A}
 \end{equation}
 
-When the centroid is obtained. The second moment of area can be computed using the Steiner terms of the stringers, skins and spar, and the moments of inertia of the skins and spar. Combining these using formulae from literature, the total moment of inertia of the structure can be found.
+\noindent When the centroid is obtained. The second moment of area can be computed using the Steiner terms of the stringers, skins and spar, and the moments of inertia of the skins and spar. Combining these using formulae from literature, the total moment of inertia of the structure can be found.
 
-\subsection{Torsional Stiffness Calculations}\label{subsec:torsstiffcalc}
+\subsection{Torsional stiffness calculations}\label{subsec:torsstiffcalc}
 
 For torsional stiffness, first the shear must be calculated. By drawing a sketch and making cuts, \eqautoref{qb} can be used:
 \begin{equation}
@@ -51,7 +51,7 @@ Now that the shear through the structure is known, the torsional stiffness can b
 \label{Gdtheta}
     G \frac{d \theta}{d z}=\frac{1}{2 A_{i}} \oint \frac{q d s}{t}
 \end{equation}
-\subsection{Deflection Calculations}
+\subsection{Deflection calculations}
 \label{subsec:deflection_calculations}
 In the provided verification model \cite{Verification_model_description}, the deflections of the flexural axis of the aileron are evaluated using the principle of stationary potential energy applied to a closed-section beam subject to lateral deflections and torsion. This was made possible by using the Rayleigh-Ritz method, which will be discussed next.
 
@@ -62,13 +62,13 @@ In the provided verification model \cite{Verification_model_description}, the de
     \Pi= U + V
 \end{equation}
 
-\noindent where $U$ is the total strain energy and $V$ is the work potential.
+\noindent where $U$ is the total strain energy and $V$ is the work potential.\\
 
-The Rayleigh-Ritz method delivers an optimal approximation of the solution, as opposed to the exact solution. Thus, the solution provided by this method is assumed to consist of a finite sum of basis functions, whose coefficients are selected in order to minimise a quantity, as explained in \cite{Verification_model_description}. 
+\noindent The Rayleigh-Ritz method delivers an optimal approximation of the solution, as opposed to the exact solution. Thus, the solution provided by this method is assumed to consist of a finite sum of basis functions, whose coefficients are selected in order to minimise a quantity, as explained in \cite{Verification_model_description}. \\
 
-The first step taken in the process of using the Rayleigh-Ritz method to solve the problem at hand, was to apply the method to a simple, one-dimensional beam, that was subjected to only one lateral deflection assumed to be in the vertical direction. No twist was taken into account, and the boundary conditions were assumed to be homogeneous. A coordinate system centered at the leading edge of the root chord, with $x$ pointing outboard and $z$ acting as a symmetry axis, pointing towards the trailing edge, has been chosen. Then total strain energy $U$ and the work potential $V$ have been expressed for the previously described case and thus, an equation for the total potential energy $\Pi$ was derived.
+\noindent The first step taken in the process of using the Rayleigh-Ritz method to solve the problem at hand, was to apply the method to a simple, one-dimensional beam, that was subjected to only one lateral deflection assumed to be in the vertical direction. No twist was taken into account, and the boundary conditions were assumed to be homogeneous. A coordinate system centered at the leading edge of the root chord, with $x$ pointing outboard and $z$ acting as a symmetry axis, pointing towards the trailing edge, has been chosen. Then total strain energy $U$ and the work potential $V$ have been expressed for the previously described case and thus, an equation for the total potential energy $\Pi$ was derived. \\
 
-Next, due to the fact that the principle of stationary total potential energy states that the total potential energy of a system is minimum when the system is in equilibrium, it results that the derivative of $\Pi$ with regards to any quantity should be zero. This is why it may be assumed at this stage of the process that the solution for the deflection $v$ may be expressed as a linear combination of a finite set of basis functions, as expressed in \eqautoref{eq:basis_functions},
+\noindent Next, due to the fact that the principle of stationary total potential energy states that the total potential energy of a system is minimum when the system is in equilibrium, it results that the derivative of $\Pi$ with regards to any quantity should be zero. This is why it may be assumed at this stage of the process that the solution for the deflection $v$ may be expressed as a linear combination of a finite set of basis functions, as expressed in \eqautoref{eq:basis_functions},
 
 \begin{equation}
 \label{eq:basis_functions}
@@ -82,7 +82,7 @@ Next, due to the fact that the principle of stationary total potential energy st
     \frac{8 E I}{l_{a}^{3}} K_{1} \mathbf{a}=\frac{l_{a}}{2} K_{2}
 \end{equation}
 
-where $K1$ and $K2$ are matrices, expressed as
+\noindent where $K1$ and $K2$ are matrices, expressed as
 
 \begin{equation}
 \label{eq:K1}
@@ -94,14 +94,14 @@ where $K1$ and $K2$ are matrices, expressed as
    K_{2}=\int_{-1}^{1} q_{a} \mathbf{\Psi} d \xi
 \end{equation}
 
-The next step consisted of choosing basis functions in such a way that their linear combination would satisfy the homogeneous boundary conditions imposed. A case with $N_{bc}$ boundary conditions of the form $\mathcal{L}\left\{v\left(\xi_{i}\right)\right\}=0, \quad 0 \leq i<N_{b c}$ was considered. Furthermore, two types of boundary conditions have been taken into account: a simple support $\rightarrow v\left(x_{1}\right)=0$ and a first order condition $\rightarrow v^{\prime}\left(x_{2}\right)=0$. In order to account for the $N-N_{bc}$ free variables, the form of the boundary conditions has been modified to
+\noindent The next step consisted of choosing basis functions in such a way that their linear combination would satisfy the homogeneous boundary conditions imposed. A case with $N_{bc}$ boundary conditions of the form $\mathcal{L}\left\{v\left(\xi_{i}\right)\right\}=0, \quad 0 \leq i<N_{b c}$ was considered. Furthermore, two types of boundary conditions have been taken into account: a simple support $\rightarrow v\left(x_{1}\right)=0$ and a first order condition $\rightarrow v^{\prime}\left(x_{2}\right)=0$. In order to account for the $N-N_{bc}$ free variables, the form of the boundary conditions has been modified to
 
 \begin{equation}
 \label{eq:new_form_of_BC}
     \Upsilon_{1} \mathbf{\bar{a}}+\Upsilon_{2} \mathbf{\hat{a}}=0
 \end{equation}
 
-where $\mathbf{\bar{a}}=-\Upsilon_{1}^{-1} {\Upsilon}_{2} \hat{\mathbf{a}}=\Upsilon \hat{\mathbf{a}}$ denotes the first $N_{bc}$ coefficients and $\mathbf{\hat{a}}$ denotes the other $N-N_{bc}$ coefficients. Furthermore, $\Upsilon_{1}$ is a $N_{b c} \times N_{b c}$ matrix and $\Upsilon_{2}$ a $N_{b c} \times\left(N-N_{b c}\right)$ matrix, with entries expressed by
+\noindent where $\mathbf{\bar{a}}=-\Upsilon_{1}^{-1} {\Upsilon}_{2} \hat{\mathbf{a}}=\Upsilon \hat{\mathbf{a}}$ denotes the first $N_{bc}$ coefficients and $\mathbf{\hat{a}}$ denotes the other $N-N_{bc}$ coefficients. Furthermore, $\Upsilon_{1}$ is a $N_{b c} \times N_{b c}$ matrix and $\Upsilon_{2}$ a $N_{b c} \times\left(N-N_{b c}\right)$ matrix, with entries expressed by
 
 $$
 \begin{aligned}
@@ -110,21 +110,20 @@ $$
 \end{aligned}
 $$
 
-Using this knowledge, differentiating the equation for the total potential energy $\Pi$ with respect to $\mathbf{\hat{a}}$ and setting it equal to 0 results in an $N_{b c} \times N_{b c}$ system of equations:
+\noindent Using this knowledge, differentiating the equation for the total potential energy $\Pi$ with respect to $\mathbf{\hat{a}}$ and setting it equal to 0 results in an $N_{b c} \times N_{b c}$ system of equations:
 
 \begin{equation}
 \label{eq:first_system}
     \frac{8 E I}{l_{a}^{3}}\left(\Upsilon^{T} K_{1}^{(1,1)} \Upsilon+\Upsilon^{T} K_{1}^{(1,2)}+K_{1}^{(2,1)} \Upsilon+K_{1}^{(2,2)}\right) \hat{\mathbf{a}}=\frac{l_{a}}{2}\left[K_{2}^{(1)} \Upsilon+K_{2}^{(2)}\right]
 \end{equation}
 
-The next step in the process of applying the Rayleigh-Ritz method, was to account for the more general case, by introducing non-homogeneous boundary conditions of the form $\mathcal{L}\left\{v\left(\xi_{i}\right)\right\}=f\left(\xi_{i}\right)$. Thus, \eqautoref{eq:new_form_of_BC} becomes $\Upsilon_{1} \mathbf{\bar{a}}+\Upsilon_{2} \mathbf{\hat{a}}=\mathbf{f}$, where the vector $\mathbf{f}$ includes the boundary conditions. Furthermore, the system of equations found in \eqautoref{eq:first_system} has a new form that accounts for the non-homogeneous boundary conditions, through the term $F$:
+\noindent The next step in the process of applying the Rayleigh-Ritz method, was to account for the more general case, by introducing non-homogeneous boundary conditions of the form $\mathcal{L}\left\{v\left(\xi_{i}\right)\right\}=f\left(\xi_{i}\right)$. Thus, \eqautoref{eq:new_form_of_BC} becomes $\Upsilon_{1} \mathbf{\bar{a}}+\Upsilon_{2} \mathbf{\hat{a}}=\mathbf{f}$, where the vector $\mathbf{f}$ includes the boundary conditions. Furthermore, the system of equations found in \eqautoref{eq:first_system} has a new form that accounts for the non-homogeneous boundary conditions, through the term $F$:
 \begin{equation}
     \label{eq:second_system}
     \frac{d \Pi}{d \hat{\mathbf{a}}}=\frac{8 E I}{l_{a}^{3}}\left(\Upsilon^{T} K_{1}^{(1,1)} {\Upsilon}+\Upsilon^{T} K_{1}^{(1,2)}+K_{1}^{(2,1)} {\Upsilon}+K_{1}^{(2,2)}\right) \hat{\mathbf{a}}=-\frac{8 E I}{l_{a}^{3}}\left({\Upsilon}^{T} K_{1}^{(1,1)} F+K_{1}^{(2,1)} F\right)+\frac{l_{a}}{2}\left[K_{2}^{(1)} {\Upsilon}+K_{2}^{(2)}\right]
 \end{equation}
 
-At this stage of the process, a set of monomials was selected as the set of basis functions.
-
+\noindent At this stage of the process, a set of monomials was selected as the set of basis functions.
 The following step consisted of the introduction of the torque distribution in the solution. This means that at this moment in the process, on top of the lateral deflections introduced, a torsional deflection is taken into account. The main steps, as described before are followed. The solutions are assumed to be given by:
 
 \begin{equation}
@@ -135,16 +134,16 @@ v(\xi) &=\sum_{i=0}^{N-1} a_{i} \psi_{i}(\xi)=\mathbf{a}^{T} \mathbf{\Psi}(\xi) 
 \end{equation}
 
 
-Three types of boundary conditions have been used, namely a simple support $v(x_1,z_1) = f_1$, a first-order support on the slope of the flexural axis $v^{\prime}(x_2)=f_2$ and a twist constraint $\phi(x_3)=f_3$. Similarly to the procedure used before to obtain \eqautoref{eq:new_form_of_BC}, the following equation is obtained:
+\noindent Three types of boundary conditions have been used, namely a simple support $v(x_1,z_1) = f_1$, a first-order support on the slope of the flexural axis $v^{\prime}(x_2)=f_2$ and a twist constraint $\phi(x_3)=f_3$. Similarly to the procedure used before to obtain \eqautoref{eq:new_form_of_BC}, the following equation is obtained:
 
 \begin{equation}
 \label{eq:new_form_of_BC_torsion}
     \Upsilon_{1} \mathbf{\bar{a}}+\Upsilon_{2} \mathbf{\hat{a}}+\Upsilon_{3} \mathbf{\bar{c}}+\Upsilon_{4} \mathbf{\hat{c}}=0
 \end{equation}
 
-where $\Upsilon_{1}$ is a $N_{bc}$ x $N_a$ matrix, $\Upsilon_{2}$ a $N_{bc}$ x $(N - N_a)$ matrix, $\Upsilon_{3}$ a $N_{bc}$ x $N_c$ matrix and $\Upsilon_{4}$ a $N_{bc}$ x $(N - N_c)$ matrix, $N_a + N_c=N_{bc}$. Futhermore, $\mathbf{\bar{c}} \text{ and } \mathbf{\hat{c}}$ have been defined as the vectors that contain the first $N_c$ coefficients, respectively the remaining $N-N_c$ coefficients $c_i$. 
+\noindent where $\Upsilon_{1}$ is a $N_{bc}$ x $N_a$ matrix, $\Upsilon_{2}$ a $N_{bc}$ x $(N - N_a)$ matrix, $\Upsilon_{3}$ a $N_{bc}$ x $N_c$ matrix and $\Upsilon_{4}$ a $N_{bc}$ x $(N - N_c)$ matrix, $N_a + N_c=N_{bc}$. Futhermore, $\mathbf{\bar{c}} \text{ and } \mathbf{\hat{c}}$ have been defined as the vectors that contain the first $N_c$ coefficients, respectively the remaining $N-N_c$ coefficients $c_i$. 
 
-The last and most important step of applying the method to the problem at hand consists of including the second shear lateral deflection, in the $z$ direction. At this point, the expression for the total potential energy is:
+\noindent The last and most important step of applying the method to the problem at hand consists of including the second shear lateral deflection, in the $z$ direction. At this point, the expression for the total potential energy is:
 
 \begin{equation}
     \label{eq:total_potential_energy_final}
@@ -154,7 +153,7 @@ The last and most important step of applying the method to the problem at hand c
 \end{aligned}
 \end{equation}
 
-where $v$ accounts for the deflection in $y$-direction, $w$ accounts for the deflection in $z$-direction and $\phi$ accounts for torsion. Furthermore, $q_a$ represents the distributed load in $y$-direction, $q_b$ represents the distributed load in $z$-direction and $\tau_x$ represents the total distributed torque. At this point, it was assumed that the solutions are expressed as:
+\noindent where $v$ accounts for the deflection in $y$-direction, $w$ accounts for the deflection in $z$-direction and $\phi$ accounts for torsion. Furthermore, $q_a$ represents the distributed load in $y$-direction, $q_b$ represents the distributed load in $z$-direction and $\tau_x$ represents the total distributed torque. At this point, it was assumed that the solutions are expressed as:
 
 \begin{equation}
     \begin{array}{l}
@@ -164,9 +163,9 @@ where $v$ accounts for the deflection in $y$-direction, $w$ accounts for the def
 \end{array}
 \end{equation}
 
-It was assumed that the same set of basis functions, consisting of monomials, as well as the same number $N$ of coefficients are used for the three types of deflections.
+\noindent It was assumed that the same set of basis functions, consisting of monomials, as well as the same number $N$ of coefficients are used for the three types of deflections.
 
-Similarly to the previous steps, $N_{bc}$ boundary conditions were defined next. This time, seven types of boundary conditions have been considered:
+\noindent Similarly to the previous steps, $N_{bc}$ boundary conditions were defined next. This time, seven types of boundary conditions have been considered:
 \begin{itemize}
     \item a simple support in the $y$-direction $\rightarrow v\left(x_{1}, y_{1}, z_{1}\right)=f_{1}$
     \item a simple support in the $z$-direction $\rightarrow w\left(x_{2}, y_{2}, z_{2}\right)=f_{2}$
@@ -178,16 +177,16 @@ Similarly to the previous steps, $N_{bc}$ boundary conditions were defined next.
     
 \end{itemize}
 
-Due to the fact that $N$ basis functions were used, the number of free variables was equal to $3N- N_{bc}$, as there were three types of deflections and thus 3 functions that needed to be approximated. The model initially uses 20 basis functions \cite{Verification_model_description}. After establishing the boundary conditions, the discretisation process could begin. Thus, similarly to the way \eqautoref{eq:new_form_of_BC} and \eqautoref{eq:new_form_of_BC_torsion} have been derived, the following was obtained:
+\noindent Due to the fact that $N$ basis functions were used, the number of free variables was equal to $3N- N_{bc}$, as there were three types of deflections and thus 3 functions that needed to be approximated. The model initially uses 20 basis functions \cite{Verification_model_description}. After establishing the boundary conditions, the discretisation process could begin. Thus, similarly to the way \eqautoref{eq:new_form_of_BC} and \eqautoref{eq:new_form_of_BC_torsion} have been derived, the following was obtained:
 
 \begin{equation}
     \label{eq:new_form_of_BC_final}
     \Upsilon_{1} \mathbf{\bar{a}}+\Upsilon_{2} \mathbf{\hat{a}}+\Upsilon_{3} \mathbf{\bar{b}}+\Upsilon_{4} \mathbf{\hat{b}}+\Upsilon_{5} \mathbf{\bar{c}}+\Upsilon_{6} \mathbf{\hat{c}}=0
 \end{equation}
 
-Following the procedure explained in the first step (\eqautoref{eq:total_potential_energy} to \eqautoref{eq:first_system}), a final discretised model/governing equation could be derived from \eqautoref{eq:new_form_of_BC_final}. This discretised model is being fed into the program in order for the computer to be able to provide a solution.  
+\noindent Following the procedure explained in the first step (\eqautoref{eq:total_potential_energy} to \eqautoref{eq:first_system}), a final discretised model/governing equation could be derived from \eqautoref{eq:new_form_of_BC_final}. This discretised model is being fed into the program in order for the computer to be able to provide a solution.  
 
-\subsection{Stress Calculations}
+\subsection{Stress calculations}
 As explained in \autoref{subsec:torsstiffcalc}, the shear flow distributions $q_b(s)$ at any point can be calculated. These can be converted to shear stresses $\tau$ by dividing by the local thickness. 
 Furthermore, the direct stress due to the moment $M_y$ and $M_z$ can be calculated on any location using \eqautoref{eq:sigma_xxz} and \eqautoref{eq:sigma_xxy}, which were found in the verification model \cite{Verification_model_description}.
 
@@ -205,10 +204,14 @@ Furthermore, the direct stress due to the moment $M_y$ and $M_z$ can be calculat
 \sigma_{vm} = \sqrt{\frac{(\sigma_{xx}-\sigma_{yy})^2+(\sigma_{yy}-\sigma_{zz})^2+(\sigma_{zz}-\sigma_{xx})^2}{2} + 3 (\tau_{xy}^2+\tau_{yz}^2+\tau_{xz}^2)}
 \end{equation}
 
-\subsection{Program Description}
+\subsection{Program description}
 The program consists of 5 parts, which will each be discussed. 
 In part 1, the parameters are defined. These are the parameters that can be changed to perform verification with our model. \\
-In part 2, the bending properties are established. This is done through defining a cross-section object, which is then used to calculate its bending properties. For this, several parameters can be reviewed, such as the location of the centroid, cross sectional area and stringer coordinates, and the moment of inertia about the y-axis and z-axis.\\
-In part 3, the torsional properties are established for the cross-section object. These include the shear centre and torsional constant $J$, which can be reviewed. \\
-In part 4, the $N$ number of basis functions will be set up, and some other material properties $E$ and $G$ are defined. Then, the aileron object is created using the energy method. Furthermore, boundary conditions and external loads will be defined, which have been described in section \ref{subsec:deflection_calculations}. Then the deflections are computed. These deflections in y and z are then plotted to check, and the values of shear force, torque and moments can be evaluated. Also, all the matrices and coefficients used in the energy method can be evaluated.\\
-In part 5, the stress distributions are computed. These are separated in the shear flow, the direct stress and the Von Mises stress. These are plotted, and the values can be evaluated for each region, as previously specified.
+
+\noindent In part 2, the bending properties are established. This is done through defining a cross-section object, which is then used to calculate its bending properties. For this, several parameters can be reviewed, such as the location of the centroid, cross sectional area and stringer coordinates, and the moment of inertia about the y-axis and z-axis.\\
+
+\noindent In part 3, the torsional properties are established for the cross-section object. These include the shear centre and torsional constant $J$, which can be reviewed. \\
+
+\noindent In part 4, the $N$ number of basis functions will be set up, and some other material properties $E$ and $G$ are defined. Then, the aileron object is created using the energy method. Furthermore, boundary conditions and external loads will be defined, which have been described in section \ref{subsec:deflection_calculations}. Then the deflections are computed. These deflections in y and z are then plotted to check, and the values of shear force, torque and moments can be evaluated. Also, all the matrices and coefficients used in the energy method can be evaluated.\\
+
+\noindent In part 5, the stress distributions are computed. These are separated in the shear flow, the direct stress and the Von Mises stress. These are plotted, and the values can be evaluated for each region, as previously specified.

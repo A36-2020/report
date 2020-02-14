@@ -3,13 +3,13 @@
 %maybe think about more tests/explaations of discrepancies
 \textit{Once the numerical model is verified to work, it is crucial to also validate the model. This is done by comparing results to real life measurements, or in this case a Finite Element Model (FEM) of the aileron of the Boeing 737, which very closely resembles reality.}
 
-\subsection{The Validation Model} 
-The validation model that is given is a FEM. This model accounts for three load cases: the bending of the aileron without loads applied to it, the bending of the aileron with loads applied, and the unbent aileron with the loads applied. Out of the three, the second load case is of the highest importance, since the numerical model accounts for the case of bending with applied loads.
+\subsection{The validation model} 
+The validation model that is given is a FEM. This model accounts for three load cases: the bending of the aileron without loads applied to it, the bending of the aileron with loads applied, and the unbent aileron with the loads applied. Out of the three, the second load case is of highest importance, since the numerical model accounts for the case of bending with applied loads.
 
-\subsection{Comparison of Numerical Model and Validation Model}
-The results that can be retrieved from the validation model are the following: Von Mises stress, S12, nodal displacement and reaction forces, evaluated using a significantly high number of predefined points in the aileron, in the order of 10000 \cite{Assignment_description}, \cite{SVV_Validation_Data_2020}. These results therefore will be compared with the numerical model. For this, the numerical model's parameters will have to be adjusted. The physical configuration of the aileron has to be changed to that of the aileron implemented on Boeing 737, and the aerodynamic load has to be changed to the constant distributed load as specified in the reader.\\
+\subsection{Comparison of numerical model and validation model}
+The results that can be retrieved from the validation model are the following: Von Mises stress, S12, nodal displacement and reaction forces, evaluated using a significantly high number of predefined points in the aileron, in the order of 10000 \cite{Assignment_description}, \cite{SVV_Validation_Data_2020}. These results therefore will be compared with the numerical model. For this, the numerical model's parameters will have to be adjusted. The physical configuration as well as the material of the aileron has to be changed to that of the aileron implemented on the Boeing 737 and the aerodynamic load has to be changed to the constant distributed load as specified in the reader \cite{SVV_Validation_Data_2020}.\\
 
-From the data given in the validation model, the Von Mises stress values can be used in order to calculate the magnitude and position of the maximum stress in the aileron. Furthermore, from the nodal displacement may be used in the comparison and validation of the twist of the aileron, as well as the deflection of the hinge line, as computed using the numerical model. Thus, validation tests may be created for the three main outputs of the numerical model: 
+\noindent From the data given in the validation model, the Von Mises stress values can be used in order to calculate the magnitude and position of the maximum stress in the aileron. Furthermore, the nodal displacement may be used in the comparison and validation of the twist of the aileron, as well as the deflection of the hinge line, as computed using the numerical model. Thus, validation tests may be created for the three main outputs of the numerical model: 
 \begin{itemize}
     \item \textbf{Maximum stress} $\rightarrow$ a direct comparison between the results provided by the numerical model and the values of the Von Mises stress provided by the validation model may be performed in this case. This is due to the fact that in the data given, the magnitude of the minimum as well as the maximum stress in the aileron is provided, together with the node number and position where these occur. Furthermore, a direct comparison of the S12 data from the FEM and shear stress distributions that may be produced by the numerical model can also be made. 
     
@@ -19,8 +19,9 @@ From the data given in the validation model, the Von Mises stress values can be 
     
 \end{itemize}
 
+\noindent An additional validation test consists of checking whether the maximum stress experienced by the structure of the aileron does not exceed the yield stress $\sigma_y$ of the material used to build the aileron. This would validate that the  
 
-\subsection{Explanation of Discrepancies}
+\subsection{Explanation of discrepancies}
 In the aerospace engineering field, it is common practice to take into account significantly high safety factors when designing structures. These factors are typically required to be around 50\% \cite{safety_factors}. Thus, it makes sense to impose an upper limit of the allowed differences between the results of the validation model and the results of the numerical model of 5\%, as this represents 10\% of the assumed safety factor. There are a couple sources of discrepancies between the given validation model and the proposed numerical model that make up for the main differences. The considered sources of discrepancies are:
 
 \begin{itemize}
